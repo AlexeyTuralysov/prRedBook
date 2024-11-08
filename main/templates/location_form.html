@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<body>
+    <h2>Новое место</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">создать</button>
+    </form>
+
+    <a href="{% url 'location_list' %}">Назад к локациям</a>
+</body>
+{% endblock %}

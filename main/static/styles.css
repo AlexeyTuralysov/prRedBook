@@ -1,0 +1,39 @@
+html {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    
+
+}
+a{
+    text-decoration: none;
+   
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+header{
+    padding: 20px;
+}
+
+.profile {
+    width: 150px;
+
+}
+
+.main-links {
+    width: auto;
+
+
+}
+
+
+header p {
+    margin: 20px;
+    text-decoration: none;
+}

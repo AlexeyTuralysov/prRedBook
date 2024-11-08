@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ location.name }}</title>
+</head>
+<body>
+    <h1>{{ location.name }}</h1>
+    <p><strong>Описание места:</strong> {{ location.description }}</p>
+    <p><strong>Дата:</strong> {{ location.date }}</p>
+    <p><strong>Время:</strong> {{ location.time }}</p>
+    <p><strong>Координаты:</strong> ({{ location.latitude }}, {{ location.longitude }})</p>
+
+    <h2>Факторы:</h2>
+    <ul>
+        {% for factor in location.factors.all %}
+            <li>{{ factor.name }} ({{ factor.type }}): {{ factor.description }}</li>
+        {% empty %}
+            <li>нет инфы</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Threats:</h2>
+    <ul>
+        {% for threat in location.threats.all %}
+            <li>{{ threat.name }}: {{ threat.description }}</li>
+        {% empty %}
+            <li>нет инфы</li>
+        {% endfor %}
+    </ul>
+
+
+
+    <a href="{% url 'location_list' %}">Назад к локациям</a>
+</body>
+</html>

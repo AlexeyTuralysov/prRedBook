@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ population.name }}</title>
+</head>
+<body>
+    <h2>{{ population.name }}</h2>
+    <div>
+        <p>{{ population.description }}</p>
+    </div>
+   
+    <p>Общее колличество: {{ population.total_count }}</p>
+    <p>Самцов: {{ population.male_count }} особей</p>
+    <p>самок: {{ population.female_count }} особей</p>
+
+    <a href="{% url 'population_list' %}">Назад к пополяциям</a>
+</body>
+</html>

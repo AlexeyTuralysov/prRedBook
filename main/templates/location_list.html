@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Добавить локацию</h2>
+
+    <a href="{% url 'location_create' %}">Добавить</a>
+
+    <ul>
+        {% for location in locations %}
+            <li>
+                <a href="{% url 'location_detail' location.pk %}">{{ location.name }}</a>
+
+            </li>
+        {% empty %}
+            <li>нету</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'population_list' %}">Назад к популяции</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<body>
+    <h2>Популяции</h2>
+    <a href="{% url 'population_create' %}">Добавить новую популяцию</a>
+    <ul>
+        {% for population in populations %}
+            <li>
+                <a href="{% url 'population_detail' population.pk %}">{{ population.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
